@@ -2,7 +2,11 @@ NAME = push_swap
 LIBFT_PATH = libft
 LIBFT = libft.a
 
-SRC_FILES = main.c 
+SRC_FILES = main.c \
+			push.c \
+			swap.c \
+			rotate.c \
+			rev_rotate.c
 SRC_DIR = srcs/
 SRC = ${addprefix ${SRC_DIR}, ${SRC_FILES}}
 OBJ = ${SRC:.c=.o}
@@ -16,11 +20,11 @@ AR = ar -rcs
 
 all: ${NAME}
 
-libf:
+libft:
 	@MAKE -sC ${LIBFT_PATH}
 
-${NAME}: libf ${OBJ}
-	${CC} ${LIBFT_PATH}/${LIBFT} ${OBJ} -o ${NAME}
+${NAME}: libft ${OBJ}
+	${CC} ${OBJ} -o ${NAME} ${LIBFT_PATH}/${LIBFT}
 
 clean:
 	rm -f ${OBJ}
