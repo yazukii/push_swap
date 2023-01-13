@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yani <yani@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:23 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/01/12 20:10:31 by yani             ###   ########.fr       */
+/*   Updated: 2023/01/13 16:17:31 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	pa(int *a, int *b, int size)
 
 	i = 0;
 	j = 0;
-	ft_putstr("pa\n\n");
+	ft_putstr("pa\n");
 	while(a[i] == 0 && i < size)
 		i++;
 	if (i == 0)
@@ -39,7 +39,7 @@ int	pb(int *a, int *b, int size)
 
 	i = 0;
 	j = 0;
-	ft_putstr("pb\n\n");
+	ft_putstr("pb\n");
 	while(b[i] == 0 && i < size)
 		i++;
 	if (i == 0)

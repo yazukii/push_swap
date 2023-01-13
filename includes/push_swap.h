@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yani <yani@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:50 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/01/12 20:13:21 by yani             ###   ########.fr       */
+/*   Updated: 2023/01/13 15:09:54 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 
 # include "../libft/libft.h"
 # include <unistd.h>
+
+// STRUCTS
+
+typedef struct	s_pos
+{
+	int	small;
+	int	pos;
+}				t_pos;
 
 // FUNCTIONS
 

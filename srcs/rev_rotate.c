@@ -19,7 +19,7 @@ int	rra(int *a, int size, int sw)
 
 	i = size - 1;
 	if (sw == 0)
-		ft_putstr("rra\n\n");
+		ft_putstr("rra\n");
 	tmp = a[i];
 	while(i > 0 && a[i - 1] != 0)
 	{
@@ -37,7 +37,7 @@ int	rrb(int *b, int size, int sw)
 
 	i = size - 1;
 	if (sw == 0)
-		ft_putstr("rrb\n\n");
+		ft_putstr("rrb\n");
 	tmp = b[i];
 	while(i > 0 && b[i - 1] != 0)
 	{
@@ -50,7 +50,7 @@ int	rrb(int *b, int size, int sw)
 
 int	rrr(int *a, int *b, int size)
 {
-	ft_putstr("rr\n\n");
+	ft_putstr("rr\n");
 	rra(a, size, 1);
 	rrb(b, size, 1);
 	return (0);

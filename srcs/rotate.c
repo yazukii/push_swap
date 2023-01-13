@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yani <yani@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:23 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/01/12 20:10:56 by yani             ###   ########.fr       */
+/*   Updated: 2023/01/13 16:17:46 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ra(int *a, int size, int sw)
 
 	i = 0;
 	if (sw == 0)
-		ft_putstr("ra\n\n");
+		ft_putstr("ra\n");
 	while(a[i] == 0 && i < size)
 		i++;
 	if (i > size - 2)
@@ -41,7 +41,7 @@ int	rb(int *b, int size, int sw)
 
 	i = 0;
 	if (sw == 0)
-		ft_putstr("rb\n\n");
+		ft_putstr("rb\n");
 	while(b[i] == 0 && i < size)
 		i++;
 	if (i > size - 2)
@@ -58,7 +58,7 @@ int	rb(int *b, int size, int sw)
 
 int	rr(int *a, int *b, int size)
 {
-	ft_putstr("rr\n\n");
+	ft_putstr("rr\n");
 	ra(a, size, 1);
 	rb(b, size, 1);
 	return (0);
