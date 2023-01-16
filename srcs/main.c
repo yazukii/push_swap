@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yani <yani@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:23 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/01/13 19:31:37 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/01/16 15:57:53 by yani             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,10 @@ t_pos find_smallest(int *a, int size)
 	while(a[i] == 0)
 		i++;
 	res.small = a[i];
+	res.pos = 0;
 	while (i < size)
 	{
-		if (a[i] < res.small)
+		if (a[i] < res.small && a[i] != 0)
 		{
 			res.small = a[i];
 			res.pos = i;
@@ -105,6 +106,7 @@ int	three_sort(int *a, int *b, int size)
 
 int four_sort(int *a, int *b, int size)
 {
+	ft_putchar('X');
 	pb(a, b, size);
 	pb(a, b, size);
 	three_sort(a, b, size);
@@ -120,6 +122,33 @@ int	check_case(int *a, int *b, int size, int argc)
 		three_sort(a, b, size);
 	else if (argc == 6)
 		four_sort(a, b, size);
+	return(0);
+}
+
+int	simplifiy(int *a, int max)
+{
+	int	i;
+	int	*newa;
+	t_pos smallest;
+
+	i = 1;
+	newa = malloc(sizeof(int) * max);
+	while(i < max)
+	{
+		smallest = find_smallest(a, max);
+		a[smallest.pos] = 0;
+		newa[smallest.pos] = i;
+		ft_putnbr_fd(smallest.small, 1);
+		ft_putchar('\n');
+		i++;
+	}
+	printstack(newa, a, max);
+	i = 0;
+	while(i < max)
+	{
+		a[i] = newa[i];
+		i++;
+	}
 	return(0);
 }
 
@@ -142,7 +171,9 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	//printstack(a, b, max);
-	check_case(a, b, max, argc);
+	simplifiy(a, max);
+	//printstack(a, b, max);
+	//check_case(a, b, max, argc);
 	//printstack(a, b, max);
 	return(0);
 }
