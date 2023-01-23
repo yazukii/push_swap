@@ -12,46 +12,46 @@
 
 #include "../includes/push_swap.h"
 
-int	rra(int *a, int size, int sw)
+int	rra(t_stacks *s, int sw)
 {
 	int	i;
 	int	tmp;
 
-	i = size - 1;
+	i = s->max - 1;
 	if (sw == 0)
 		ft_putstr("rra\n");
-	tmp = a[i];
-	while(i > 0 && a[i - 1] != 0)
+	tmp = s->a[i];
+	while(i > s->max - s->size)
 	{
-		a[i] = a[i - 1];
+		s->a[i] = s->a[i - 1];
 		i--;
 	}
-	a[i] = tmp;
+	s->a[i] = tmp;
 	return (0);
 }
 
-int	rrb(int *b, int size, int sw)
+int	rrb(t_stacks *s, int sw)
 {
 	int	i;
 	int	tmp;
 
-	i = size - 1;
+	i = s->max - 1;
 	if (sw == 0)
 		ft_putstr("rrb\n");
-	tmp = b[i];
-	while(i > 0 && b[i - 1] != 0)
+	tmp = s->b[i];
+	while(i > s->max - (s->max - s->size))
 	{
-		b[i] = b[i - 1];
+		s->b[i] = s->b[i - 1];
 		i--;
 	}
-	b[i] = tmp;
+	s->b[i] = tmp;
 	return (0);
 }
 
-int	rrr(int *a, int *b, int size)
+int	rrr(t_stacks *s)
 {
-	ft_putstr("rr\n");
-	rra(a, size, 1);
-	rrb(b, size, 1);
+	ft_putstr("rrr\n");
+	rra(s, 1);
+	rrb(s, 1);
 	return (0);
 }

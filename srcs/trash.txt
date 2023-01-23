@@ -1,0 +1,74 @@
+
+/*
+int	sorting(t_stacks *s)
+{
+	int		i;
+	t_pos	res;
+
+	i = 0;
+	while(s->a[max-> - 1] != 0)
+	{
+		while(a[i] == 0)
+			i++;
+		res = find_smallest(a, size);
+		if (res.pos < size - i / 2)
+		{
+			while (a[i] != res.small)
+				ra(a, size, 0);
+		}
+		else
+		{
+			while (a[i] != res.small)
+				rra(a, size, 0);
+		}
+		pb(a, b, size);
+	}
+	while (b[size - 1] != 0)
+		pa(a, b, size);
+	return (0);
+}
+
+int	three_sort(int *a, int *b, int size)
+{
+	int	i;
+
+	i = 0;
+	while(a[i] == 0)
+		i++;
+	if(a[i] > a[i + 1] && a[i + 1] < a[i + 2] && a[i + 2] > a[i])
+		sa(a, size, 0);
+	else if(a[i] > a[i + 1] && a[i + 1] > a[i + 2] && a[i + 2] < a[i])
+	{
+		sa(a, size, 0);
+		rra(a, size, 0);
+	}
+	else if(a[i] > a[i + 1] && a[i + 1] < a[i + 2] && a[i + 2] < a[i])
+		ra(a, size, 0);
+	else if(a[i] < a[i + 1] && a[i + 1] > a[i + 2] && a[i + 2] > a[i])
+	{
+		sa(a, size, 0);
+		ra(a, size, 0);
+	}
+	else if(a[i] < a[i + 1] && a[i + 1] > a[i + 2] && a[i + 2] < a[i])
+		rra(a, size, 0);
+	return (0);
+}
+
+int four_sort(t_stacks *s)
+{
+	pb(s);
+	pb(s);
+	pb(s);
+	rrr(s);
+	return (0);
+}
+
+int	check_case(int *a, int *b, int size, int argc)
+{
+	if (argc == 4)
+		three_sort(a, b, size);
+	else if (argc == 6)
+		four_sort(a, b, size);
+	return(0);
+}
+*/

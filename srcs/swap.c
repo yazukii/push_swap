@@ -6,52 +6,53 @@
 /*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:23 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/01/13 16:17:53 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:20:21 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	sa(int *a, int size, int sw)
+int	sa(t_stacks *s, int sw)
 {
 	int	i;
 	int tmp;
 
 	i = 0;
-	while(a[i] == 0)
+	while(i < s->max - s->size)
 		i++;
 	if (sw == 0)
 		ft_putstr("sa\n");
-	if (i > size - 2)
+	if (i > s->size - 2)
 		return (1);
-	tmp = a[i];
-	a[i] = a[i + 1];
-	a[i + 1] = tmp;
+	tmp = s->a[i];
+	s->a[i] = s->a[i + 1];
+	s->a[i + 1] = tmp;
 	return (0);
 }
 
-int	sb(int *b, int size, int sw)
+int	sb(t_stacks *s, int sw)
 {
 	int	i;
 	int tmp;
 
 	i = 0;
-	while(b[i] == 0)
+	while(i < s->max - (s->max - s->size))
 		i++;
+	ft_putnbr_fd(i, 1);
 	if(sw == 0)
 		ft_putstr("sb\n");
-	if (i > size - 2)
+	if (i > s->max - 2)
 		return (1);
-	tmp = b[i];
-	b[i] = b[i + 1];
-	b[i + 1] = tmp;
+	tmp = s->b[i];
+	s->b[i] = s->b[i + 1];
+	s->b[i + 1] = tmp;
 	return (0);
 }
 
-int	ss(int *a, int *b, int size)
+int	ss(t_stacks *s)
 {
 	ft_putstr("ss\n");
-	sa(a, size, 1);
-	sb(b, size, 1);
+	sa(s, 1);
+	sb(s, 1);
 	return (0);
 }

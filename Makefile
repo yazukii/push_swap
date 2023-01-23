@@ -24,7 +24,7 @@ libft:
 	@MAKE -sC ${LIBFT_PATH}
 
 ${NAME}: libft ${OBJ}
-	${CC} ${OBJ} -o ${NAME} ${LIBFT_PATH}/${LIBFT}
+	${CC} ${OBJ} ${LIBFT_PATH}/${LIBFT} -o ${NAME}
 
 clean:
 	rm -f ${OBJ}

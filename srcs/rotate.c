@@ -6,13 +6,13 @@
 /*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:23 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/01/13 16:17:46 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:13:24 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ra(int *a, int size, int sw)
+int	ra(t_stacks *s, int sw)
 {
 	int	i;
 	int	tmp;
@@ -20,21 +20,21 @@ int	ra(int *a, int size, int sw)
 	i = 0;
 	if (sw == 0)
 		ft_putstr("ra\n");
-	while(a[i] == 0 && i < size)
+	while(i < s->max - s->size)
 		i++;
-	if (i > size - 2)
+	if (i > s->max - 2)
 		return (1);
-	tmp = a[i];
-	while(i < size - 1)
+	tmp = s->a[i];
+	while(i < s->max - 1)
 	{
-		a[i] = a[i + 1];
+		s->a[i] = s->a[i + 1];
 		i++;
 	}
-	a[i] = tmp;
+	s->a[i] = tmp;
 	return (0);
 }
 
-int	rb(int *b, int size, int sw)
+int	rb(t_stacks *s, int sw)
 {
 	int	i;
 	int	tmp;
@@ -42,24 +42,24 @@ int	rb(int *b, int size, int sw)
 	i = 0;
 	if (sw == 0)
 		ft_putstr("rb\n");
-	while(b[i] == 0 && i < size)
+	while(i < s->max - (s->max - s->size))
 		i++;
-	if (i > size - 2)
+	if (i > s->max - 2)
 		return (1);
-	tmp = b[i];
-	while(i < size - 1)
+	tmp = s->b[i];
+	while(i < s->max - 1)
 	{
-		b[i] = b[i + 1];
+		s->b[i] = s->b[i + 1];
 		i++;
 	}
-	b[i] = tmp;
+	s->b[i] = tmp;
 	return (0);
 }
 
-int	rr(int *a, int *b, int size)
+int	rr(t_stacks *s)
 {
 	ft_putstr("rr\n");
-	ra(a, size, 1);
-	rb(b, size, 1);
+	ra(s, 1);
+	rb(s, 1);
 	return (0);
 }

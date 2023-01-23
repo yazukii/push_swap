@@ -6,7 +6,7 @@
 /*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:50 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/01/13 15:09:54 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:28:02 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,27 @@ typedef struct	s_pos
 	int	pos;
 }				t_pos;
 
+typedef struct	s_stacks
+{
+	int	*a;
+	int	*b;
+	int	size;
+	int	max;
+}				t_stacks;
+
 // FUNCTIONS
 
-int		sa(int *a, int size, int sw);
-int		sb(int *b, int size, int sw);
-int		ss(int *a, int *b, int size);
-int		pa(int *a, int *b, int size);
-int		pb(int *a, int *b, int size);
-int		ra(int *a, int size, int sw);
-int		rb(int *b, int size, int sw);
-int		rr(int *a, int *b, int size);
-int		rra(int *a, int size, int sw);
-int		rrb(int *b, int size, int sw);
-int		rrr(int *a, int *b, int size);
+int		sa(t_stacks *s, int sw);
+int		sb(t_stacks *s, int sw);
+int		ss(t_stacks *s);
+int		pa(t_stacks *s);
+int		pb(t_stacks *s);
+int		ra(t_stacks *s, int sw);
+int		rb(t_stacks *s, int sw);
+int		rr(t_stacks *s);
+int		rra(t_stacks *s, int sw);
+int		rrb(t_stacks *s, int sw);
+int		rrr(t_stacks *s);
 
 
 #endif

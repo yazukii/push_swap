@@ -6,13 +6,13 @@
 /*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:23 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/01/13 16:17:31 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:13:13 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	pa(int *a, int *b, int size)
+int	pa(t_stacks *s)
 {
 	int	i;
 	int	j;
@@ -20,19 +20,18 @@ int	pa(int *a, int *b, int size)
 	i = 0;
 	j = 0;
 	ft_putstr("pa\n");
-	while(a[i] == 0 && i < size)
+	while(i < s->max - s->size)
 		i++;
-	if (i == 0)
-		return (1);
 	i--;
-	while(b[j] == 0)
+	while(j < s->max - (s->max - s->size))
 		j++;
-	a[i] = b[j];
-	b[j] = 0;
+	s->a[i] = s->b[j];
+	s->b[j] = 0;
+	s->size += 1;
 	return (0);
 }
 
-int	pb(int *a, int *b, int size)
+int	pb(t_stacks *s)
 {
 	int	i;
 	int	j;
@@ -40,14 +39,13 @@ int	pb(int *a, int *b, int size)
 	i = 0;
 	j = 0;
 	ft_putstr("pb\n");
-	while(b[i] == 0 && i < size)
+	while(i < s->max - s->size)
 		i++;
-	if (i == 0)
-		return (1);
-	i--;
-	while(a[j] == 0)
+	while(j < s->max - (s->max - s->size))
 		j++;
-	b[i] = a[j];
-	a[j] = 0;
+	j--;
+	s->b[j] = s->a[i];
+	s->a[i] = 0;
+	s->size -= 1;
 	return (0);
 }
