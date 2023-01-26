@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yidouiss <yidouiss@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:50 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/01/23 17:28:02 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:37:50 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,13 @@ int		rr(t_stacks *s);
 int		rra(t_stacks *s, int sw);
 int		rrb(t_stacks *s, int sw);
 int		rrr(t_stacks *s);
-
+int		choose_four(t_stacks *s);
+int		choose_five(t_stacks *s);
+int		three_sort(t_stacks *s);
+int		sort_five(t_stacks *s);
+int		symplify(t_stacks *s, int *t);
+void	printstack(t_stacks *s);
+void	bubblesort(t_stacks *s, int *t);
+t_pos	find_smallest(t_stacks *s);
 
 #endif
