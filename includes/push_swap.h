@@ -6,7 +6,7 @@
 /*   By: yidouiss <yidouiss@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:50 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/01/26 17:37:50 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/02/01 22:45:32 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct	s_stacks
 
 // FUNCTIONS
 
+int		errors(t_stacks *s);
 int		sa(t_stacks *s, int sw);
 int		sb(t_stacks *s, int sw);
 int		ss(t_stacks *s);

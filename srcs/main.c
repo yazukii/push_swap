@@ -6,7 +6,7 @@
 /*   By: yidouiss <yidouiss@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:23 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/01/26 18:46:06 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/02/01 22:45:47 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,24 @@ int	radix_sort(t_stacks *s)
 	return (0);
 }
 
+void	cases(t_stacks *s, int *t)
+{
+	if(s->max == 3)
+		three_sort(s);
+	else if(s->max == 5)
+		sort_five(s);
+	else
+	{
+		symplify(s, t);
+		radix_sort(s);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	int	i;
-	t_stacks stck;
 	int	*t;
+	t_stacks stck;
 
 	stck.max = argc - 1;
 	stck.size = stck.max;
@@ -70,14 +83,12 @@ int	main(int argc, char **argv)
 		stck.a[i] = ft_atoi(argv[i + 1]);
 		i++;
 	}
-	if(stck.max == 3)
-		three_sort(&stck);
-	else if(stck.max == 5)
-		sort_five(&stck);
-	else
-	{
-		symplify(&stck, t);
-		radix_sort(&stck);
-	}
+	if (errors(&stck) == 1)
+		return (0);
+	cases(&stck, t);
+	printstack(&stck);
+	free(stck.a);
+	free(stck.b);
+	free(t);
 	return(0);
 }

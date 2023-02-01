@@ -9,7 +9,8 @@ SRC_FILES = main.c \
 			rev_rotate.c \
 			choose.c \
 			sort_cases.c \
-			utils.c
+			utils.c \
+			error.c
 SRC_DIR = srcs/
 SRC = ${addprefix ${SRC_DIR}, ${SRC_FILES}}
 OBJ = ${SRC:.c=.o}
