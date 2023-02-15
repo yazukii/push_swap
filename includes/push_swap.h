@@ -6,7 +6,7 @@
 /*   By: yidouiss <yidouiss@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:50 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/02/01 22:45:32 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/02/10 15:39:10 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 // STRUCTS
 
-typedef struct	s_pos
+typedef	struct s_pos
 {
 	int	small;
 	int	pos;
 }				t_pos;
 
-typedef struct	s_stacks
+typedef	struct s_stacks
 {
 	int	*a;
 	int	*b;
@@ -48,7 +48,7 @@ int		rrb(t_stacks *s, int sw);
 int		rrr(t_stacks *s);
 int		choose_four(t_stacks *s);
 int		choose_five(t_stacks *s);
-int		three_sort(t_stacks *s);
+void	three_sort(t_stacks *s);
 int		sort_five(t_stacks *s);
 int		symplify(t_stacks *s, int *t);
 void	printstack(t_stacks *s);

@@ -12,17 +12,17 @@
 
 #include"../includes/push_swap.h"
 
-void bubblesort(t_stacks *s, int *t)
+void	bubblesort(t_stacks *s, int *t)
 {
-	int i; 
+	int	i;
 	int	j;
-	int tmp;
+	int	tmp;
 
 	i = 0;
 	j = 0;
-	while(i < s->max)
+	while (i < s->max)
 	{
-		while(j < s->max - 1)
+		while (j < s->max - 1)
 		{
 			if (t[j] > t[j + 1])
 			{
@@ -37,30 +37,31 @@ void bubblesort(t_stacks *s, int *t)
 	}
 }
 
-int	three_sort(t_stacks *s)
+void	three_sort(t_stacks *s)
 {
 	int	i;
+	int	j;
+	int	k;
 
-	i = 0;
-	while(s->a[i] == 0)
-		i++;
-	if(s->a[i] > s->a[i + 1] && s->a[i + 1] < s->a[i + 2] && s->a[i + 2] > s->a[i])
+	i = s->max - s->size;
+	k = i + 2;
+	j = i + 1;
+	if (s->a[i] > s->a[j] && s->a[j] < s->a[k] && s->a[k] > s->a[i])
 		sa(s, 0);
-	else if(s->a[i] > s->a[i + 1] && s->a[i + 1] > s->a[i + 2] && s->a[i + 2] < s->a[i])
+	else if (s->a[i] > s->a[j] && s->a[j] > s->a[k] && s->a[k] < s->a[i])
 	{
 		sa(s, 0);
 		rra(s, 0);
 	}
-	else if(s->a[i] > s->a[i + 1] && s->a[i + 1] < s->a[i + 2] && s->a[i + 2] < s->a[i])
+	else if (s->a[i] > s->a[j] && s->a[j] < s->a[k] && s->a[k] < s->a[i])
 		ra(s, 0);
-	else if(s->a[i] < s->a[i + 1] && s->a[i + 1] > s->a[i + 2] && s->a[i + 2] > s->a[i])
+	else if (s->a[i] < s->a[j] && s->a[j] > s->a[k] && s->a[k] > s->a[i])
 	{
 		sa(s, 0);
 		ra(s, 0);
 	}
-	else if(s->a[i] < s->a[i + 1] && s->a[i + 1] > s->a[i + 2] && s->a[i + 2] < s->a[i])
+	else if (s->a[i] < s->a[j] && s->a[j] > s->a[k] && s->a[k] < s->a[i])
 		rra(s, 0);
-	return (0);
 }
 
 int	sort_five(t_stacks *s)

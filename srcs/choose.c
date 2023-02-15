@@ -14,7 +14,7 @@
 
 int	choose_five(t_stacks *s)
 {
-	t_pos pos;
+	t_pos	pos;
 
 	pos = find_smallest(s);
 	if (pos.pos == 1)
@@ -37,7 +37,7 @@ int	choose_five(t_stacks *s)
 
 int	choose_four(t_stacks *s)
 {
-	t_pos pos;
+	t_pos	pos;
 
 	pos = find_smallest(s);
 	if (pos.pos == 2)

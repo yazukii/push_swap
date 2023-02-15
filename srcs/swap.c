@@ -15,10 +15,10 @@
 int	sa(t_stacks *s, int sw)
 {
 	int	i;
-	int tmp;
+	int	tmp;
 
 	i = 0;
-	while(i < s->max - s->size)
+	while (i < s->max - s->size)
 		i++;
 	if (sw == 0)
 		ft_putstr("sa\n");
@@ -33,13 +33,13 @@ int	sa(t_stacks *s, int sw)
 int	sb(t_stacks *s, int sw)
 {
 	int	i;
-	int tmp;
+	int	tmp;
 
 	i = 0;
-	while(i < s->max - (s->max - s->size))
+	while (i < s->max - (s->max - s->size))
 		i++;
 	ft_putnbr_fd(i, 1);
-	if(sw == 0)
+	if (sw == 0)
 		ft_putstr("sb\n");
 	if (i > s->max - 2)
 		return (1);

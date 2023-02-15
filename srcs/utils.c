@@ -20,12 +20,15 @@ int	symplify(t_stacks *s, int *t)
 	j = 0;
 	i = 0;
 	bubblesort(s, t);
-	while(i < s->max)
+	while (i < s->max)
 	{
-		while(j < s->max)
+		while (j < s->max)
 		{
-			if(s->a[i] == t[j])
+			if (s->a[i] == t[j])
+			{
 				s->a[i] = j;
+				break ;
+			}
 			j++;
 		}
 		j = 0;
@@ -36,9 +39,10 @@ int	symplify(t_stacks *s, int *t)
 
 void	printstack(t_stacks *s)
 {
-	int	i;
-	t_stacks stacks = *s;
+	int			i;
+	t_stacks	stacks;
 
+	stacks = *s;
 	i = 0;
 	while (i < stacks.max)
 	{
@@ -52,15 +56,15 @@ void	printstack(t_stacks *s)
 	ft_putstr("a b\n\n");
 }
 
-t_pos find_smallest(t_stacks *s)
+t_pos	find_smallest(t_stacks *s)
 {
-	int	i;
+	int		i;
 	t_pos	res;
 
 	i = s->max - s->size;
 	res.small = s->a[i];
 	res.pos = i;
-	while(i < s->max)
+	while (i < s->max)
 	{
 		if (s->a[i] < res.small)
 		{

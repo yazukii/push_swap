@@ -20,10 +20,10 @@ int	pa(t_stacks *s)
 	i = 0;
 	j = 0;
 	ft_putstr("pa\n");
-	while(i < s->max - s->size)
+	while (i < s->max - s->size)
 		i++;
 	i--;
-	while(j < s->max - (s->max - s->size))
+	while (j < s->max - (s->max - s->size))
 		j++;
 	s->a[i] = s->b[j];
 	s->b[j] = 0;
@@ -39,9 +39,9 @@ int	pb(t_stacks *s)
 	i = 0;
 	j = 0;
 	ft_putstr("pb\n");
-	while(i < s->max - s->size)
+	while (i < s->max - s->size)
 		i++;
-	while(j < s->max - (s->max - s->size))
+	while (j < s->max - (s->max - s->size))
 		j++;
 	j--;
 	s->b[j] = s->a[i];

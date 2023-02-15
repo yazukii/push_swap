@@ -1,4 +1,4 @@
-#/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
@@ -21,7 +21,7 @@ int	rra(t_stacks *s, int sw)
 	if (sw == 0)
 		ft_putstr("rra\n");
 	tmp = s->a[i];
-	while(i > s->max - s->size)
+	while (i > s->max - s->size)
 	{
 		s->a[i] = s->a[i - 1];
 		i--;
@@ -39,7 +39,7 @@ int	rrb(t_stacks *s, int sw)
 	if (sw == 0)
 		ft_putstr("rrb\n");
 	tmp = s->b[i];
-	while(i > s->max - (s->max - s->size))
+	while (i > s->max - (s->max - s->size))
 	{
 		s->b[i] = s->b[i - 1];
 		i--;
