@@ -22,18 +22,30 @@ int	max_int(double s)
 	return (0);
 }
 
-int	check_sorted(t_stacks *s)
+int	ft_is_int(char **s, int c)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (i < s->max - 1)
+	j = 1;
+	while (j < c)
 	{
-		if (s->a[i] > s->a[i + 1])
-			return (0);
-		i++;
+		while (s[j][i])
+		{
+			if (s[j][i] == '-' || s[j][i] == '+')
+				i++;
+			if (!ft_isdigit(s[j][i]))
+			{
+				ft_putstr_fd("Error\n", 1);
+				return (1);
+			}
+			i++;
+		}
+		i = 0;
+		j++;
 	}
-	return (1);
+	return (0);
 }
 
 int	errors(t_stacks *s)
@@ -49,7 +61,7 @@ int	errors(t_stacks *s)
 		{
 			if (s->a[i] == s->a[j] && i != j)
 			{
-				ft_putstr_fd("Error: duplicate number", 1);
+				ft_putstr_fd("Error\n", 1);
 				return (1);
 			}
 			j++;

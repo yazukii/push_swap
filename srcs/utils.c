@@ -12,6 +12,20 @@
 
 #include"../includes/push_swap.h"
 
+int	check_sorted(t_stacks *s)
+{
+	int	i;
+
+	i = 0;
+	while (i < s->max - 1)
+	{
+		if (s->a[i] > s->a[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int	symplify(t_stacks *s, int *t)
 {
 	int	i;

@@ -6,7 +6,7 @@
 /*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:50 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/02/17 15:57:47 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/02/17 18:47:50 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,26 @@
 
 // STRUCTS
 
-typedef	struct s_pos
+typedef struct s_pos
 {
 	int	small;
 	int	pos;
 }				t_pos;
 
-typedef	struct s_stacks
+typedef struct s_stacks
 {
 	int	*a;
 	int	*b;
-	int		size;
-	int		max;
+	int	size;
+	int	max;
 }				t_stacks;
 
 // FUNCTIONS
 
 int		errors(t_stacks *s);
+int		check_sorted(t_stacks *s);
 int		max_int(double s);
+int		ft_is_int(char **s, int c);
 int		sa(t_stacks *s, int sw);
 int		sb(t_stacks *s, int sw);
 int		ss(t_stacks *s);
