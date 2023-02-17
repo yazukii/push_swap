@@ -6,7 +6,7 @@
 /*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:42:23 by yidouiss          #+#    #+#             */
-/*   Updated: 2022/10/19 12:21:44 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/02/17 14:51:39 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ int	num(char num)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+double	ft_atoi(const char *str)
 {
-	int	i;
-	int	j;
-	int	res;
+	int		i;
+	int		j;
+	double	res;
 
 	i = 0;
 	j = 0;

@@ -12,19 +12,12 @@
 
 #include "../includes/push_swap.h"
 
-int	max_int(t_stacks *s)
+int	max_int(double s)
 {
-	int	i;
-
-	i = 0;
-	while (i < s->max)
+	if (s > 2147483647 || s < -2147483648)
 	{
-		if (s->a[i] > (INT32_MAX) || s->a[i] < (INT32_MIN))
-		{
-			ft_putstr_fd("Error: number out of range", 1);
-			return (1);
-		}
-		i++;
+		ft_putstr_fd("Error\n", 1);
+		return (1);
 	}
 	return (0);
 }
@@ -50,8 +43,6 @@ int	errors(t_stacks *s)
 
 	i = 0;
 	j = 0;
-	if (max_int(s) == 1 || check_sorted(s) == 1)
-		return (1);
 	while (i < s->max)
 	{
 		while (j < s->max)

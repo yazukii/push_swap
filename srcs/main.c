@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yidouiss <yidouiss@42lausanne.ch>          +#+  +:+       +#+        */
+/*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:23 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/02/13 13:09:03 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/02/17 15:57:24 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	ft_free(t_stacks *s, int *t)
+{
+	free(t);
+	free(s->a);
+	free(s->b);
+	return (0);
+}
 
 int	empty_b(t_stacks *s)
 {
@@ -77,6 +85,8 @@ int	main(int argc, char **argv)
 		return (0);
 	while (i < stck.max)
 	{
+		if (max_int(ft_atoi(argv[i + 1])) == 1)
+			return (1);
 		t[i] = ft_atoi(argv[i + 1]);
 		stck.a[i] = ft_atoi(argv[i + 1]);
 		i++;
@@ -84,8 +94,6 @@ int	main(int argc, char **argv)
 	if (errors(&stck) == 1)
 		return (0);
 	cases(&stck, t);
-	free(stck.a);
-	free(stck.b);
-	free (t);
+	ft_free(&stck, t);
 	return (0);
 }
