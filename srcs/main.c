@@ -6,7 +6,7 @@
 /*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:23 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/02/17 19:01:34 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/02/18 14:51:01 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,47 +76,13 @@ void	cases(t_stacks *s, int *t)
 	}
 }
 
-int	ft_count_words(char const *s, char c)
-{
-	int	i;
-	int	count;
-
-	i = 0;
-	count = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] != c)
-		{
-			count++;
-			while (s[i] != c && s[i] != '\0')
-				i++;
-		}
-		else
-			i++;
-	}
-	return (count);
-}
-
 int	main(int argc, char **argv)
 {
 	int			i;
 	int			*t;
 	t_stacks	stck;
-	char		**tab;
 
-	if (argc == 2)
-	{
-		argc = ft_count_words(argv[1], ' ') + 1;
-		tab = ft_split(argv[1], ' ');
-		argv = malloc(sizeof(char *) * argc + 1);
-		i = 1;
-		while (i < argc)
-		{
-			argv[0] = "push_swap";
-			argv[i] = tab[i - 1];
-			i++;
-		}
-	}
+	argv = one_arg(argv, &argc);
 	stck.max = argc - 1;
 	stck.size = stck.max;
 	i = 0;
@@ -125,13 +91,12 @@ int	main(int argc, char **argv)
 	t = malloc(sizeof(int) * stck.max);
 	if (argc == 1 || ft_is_int(argv, argc) == 1)
 		return (0);
-	while (i < stck.max)
+	while (i++ < stck.max)
 	{
-		if (max_int(ft_atoi(argv[i + 1])) == 1)
+		if (max_int(ft_atoi(argv[i])) == 1)
 			return (1);
-		t[i] = ft_atoi(argv[i + 1]);
-		stck.a[i] = ft_atoi(argv[i + 1]);
-		i++;
+		t[i - 1] = ft_atoi(argv[i]);
+		stck.a[i - 1] = ft_atoi(argv[i]);
 	}
 	if (errors(&stck) == 1)
 		return (0);

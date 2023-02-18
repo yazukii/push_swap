@@ -6,7 +6,7 @@
 /*   By: yidouiss <yidouiss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 17:57:50 by yidouiss          #+#    #+#             */
-/*   Updated: 2023/02/17 18:47:50 by yidouiss         ###   ########.fr       */
+/*   Updated: 2023/02/18 14:51:26 by yidouiss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ typedef struct s_stacks
 // FUNCTIONS
 
 int		errors(t_stacks *s);
+int		ft_count_words(char const *s, char c);
+char	**one_arg(char **argv, int *argc);
 int		check_sorted(t_stacks *s);
 int		max_int(double s);
 int		ft_is_int(char **s, int c);

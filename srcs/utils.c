@@ -51,23 +51,48 @@ int	symplify(t_stacks *s, int *t)
 	return (0);
 }
 
-void	printstack(t_stacks *s)
+int	ft_count_words(char const *s, char c)
 {
-	int			i;
-	t_stacks	stacks;
+	int	i;
+	int	count;
 
-	stacks = *s;
 	i = 0;
-	while (i < stacks.max)
+	count = 0;
+	while (s[i] != '\0')
 	{
-		ft_putnbr_fd(stacks.a[i], 1);
-		ft_putchar(' ');
-		ft_putnbr_fd(stacks.b[i], 1);
-		ft_putchar('\n');
-		i++;
+		if (s[i] != c)
+		{
+			count++;
+			while (s[i] != c && s[i] != '\0')
+				i++;
+		}
+		else
+			i++;
 	}
-	ft_putstr("_ _\n");
-	ft_putstr("a b\n\n");
+	return (count);
+}
+
+char	**one_arg(char **argv, int *argc)
+{
+	int		i;
+	char	**tab;
+
+	if (*argc == 2)
+	{
+		*argc = ft_count_words(argv[1], ' ') + 1;
+		argv = ft_split(argv[1], ' ');
+		tab = malloc(sizeof(char *) * *argc);
+		i = 1;
+		while (i < *argc)
+		{
+			tab[0] = "./push_swap";
+			tab[i] = argv[i - 1];
+			i++;
+		}
+	}
+	else
+		tab = argv;
+	return (tab);
 }
 
 t_pos	find_smallest(t_stacks *s)
